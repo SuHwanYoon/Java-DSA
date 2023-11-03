@@ -1,5 +1,7 @@
 package codingchallenges;
 
+import java.util.Scanner;
+
 public class FizzBuzz {
     //Write a short program that prints each number from 1 to 100 on a new line.
     //
@@ -9,7 +11,11 @@ public class FizzBuzz {
     //
     //For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the number.
     public static void main(String[] args) {
-        printFizzBuzz(100);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = scanner.nextInt();
+        printFizzBuzz(n);
+        scanner.close();
     }
 
     public static void printFizzBuzz(int n){
