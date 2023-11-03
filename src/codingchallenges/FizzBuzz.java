@@ -12,9 +12,29 @@ public class FizzBuzz {
     //For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the number.
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int n = scanner.nextInt();
-        printFizzBuzz(n);
+        int choice;
+
+        do {
+            System.out.print("Enter 0 to exit or 1 to run FizzBuzz: ");
+
+            while (!scanner.hasNextInt()) {
+                System.out.println("That's not a number!");
+                scanner.next(); // this is important to consume the invalid input
+                System.out.print("Enter 0 to exit or1 to run FizzBuzz: ");
+            }
+
+            choice = scanner.nextInt();
+
+            if (choice == 1) {
+                System.out.print("Enter a number for FizzBuzz: ");
+                int n = scanner.nextInt();
+                printFizzBuzz(n);
+            } else if (choice != 0) {
+                System.out.println("Invalid choice. Please enter 0 or 1.");
+            }
+        } while (choice != 0);
+
+        System.out.println("Exiting program.");
         scanner.close();
     }
 
